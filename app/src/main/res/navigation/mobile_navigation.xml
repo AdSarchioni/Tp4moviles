@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_farmacias">
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.example.menuconmapa.ui.mapa.MapaFragment"
+        android:label="Ubicacion"
+        tools:layout="@layout/fragment_mapa" />
+
+    <fragment
+        android:id="@+id/detalleFarmacia2"
+        android:name="com.example.menuconmapa.ui.farmacias.DetalleFarmacia"
+        android:label="fragment_detalle_farmacia"
+        tools:layout="@layout/fragment_detalle_farmacia" >
+        <action
+            android:id="@+id/action_detalleFarmacia2_to_nav_farmacias"
+            app:destination="@id/nav_farmacias" />
+        <action
+            android:id="@+id/action_detalleFarmacia2_to_farmaciasFragment"
+            app:destination="@id/nav_farmacias" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.example.menuconmapa.ui.salir.SalirFragment"
+        android:label="Salir"
+        tools:layout="@layout/fragment_salir" />
+
+    <fragment
+        android:id="@+id/nav_farmacias"
+        android:name="com.example.menuconmapa.ui.farmacias.FarmaciasFragment"
+        android:label="fragment_farmacias"
+        tools:layout="@layout/fragment_farmacias" >
+        <action
+            android:id="@+id/action_farmaciasFragment_to_detalleFarmacia2"
+            app:destination="@id/detalleFarmacia2" />
+    </fragment>
+
+
+</navigation>
